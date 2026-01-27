@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users - NexVA Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar" id="sidebar">
+            <a href="../index.html" class="sidebar-brand"><i class="fa-solid fa-layer-group"></i> Nex<span>VA</span></a>
+            <ul class="sidebar-menu">
+                <li class="menu-item"><a href="dashboard.html" class="menu-link"><span>Analytics</span> <i
+                            class="fa-solid fa-chart-pie"></i></a></li>
+                <li class="menu-item"><a href="users.html" class="menu-link active"><span>Users</span> <i
+                            class="fa-solid fa-users"></i></a></li>
+                <li class="menu-item"><a href="tasks.html" class="menu-link"><span>Tasks</span> <i
+                            class="fa-solid fa-list-check"></i></a></li>
+                <li class="menu-item"><a href="messages.html" class="menu-link"><span>Messages</span> <i
+                            class="fa-solid fa-envelope"></i></a></li>
+                <li class="menu-item"><a href="settings.html" class="menu-link"><span>Settings</span> <i
+                            class="fa-solid fa-gear"></i></a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <button id="sidebarToggle"
+                        style="background: none; border: none; font-size: 1.25rem; cursor: pointer; color: var(--text-muted);"><i
+                            class="fa-solid fa-bars"></i></button>
+                    <h2 style="margin: 0;">User Management</h2>
+                </div>
+                <div class="user-profile">
+                    <button id="themeToggle" style="border:none; background:none; cursor:pointer;"><i
+                            class="fa-solid fa-moon"></i></button>
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" class="user-avatar">
+                </div>
+            </header>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="clients">Clients</button>
+                <button class="tab-btn" data-tab="vas">Virtual Assistants</button>
+            </div>
+
+            <div id="clients" class="tab-content active">
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>All Clients</h3>
+                        <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">+ Add
+                            Client</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="display: flex; gap: 0.75rem; align-items: center;">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=50"
+                                        style="width: 32px; height: 32px; border-radius: 50%;">
+                                    <span style="font-weight: 500;">Sarah Jenkins</span>
+                                </td>
+                                <td>sarah@creative.com</td>
+                                <td>Client</td>
+                                <td><span class="status active">Active</span></td>
+                                <td><button
+                                        style="border: none; background: none; cursor: pointer; color: var(--text-muted);"><i
+                                            class="fa-solid fa-ellipsis-v"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex; gap: 0.75rem; align-items: center;">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50"
+                                        style="width: 32px; height: 32px; border-radius: 50%;">
+                                    <span style="font-weight: 500;">David Miller</span>
+                                </td>
+                                <td>david@millergroup.com</td>
+                                <td>Client</td>
+                                <td><span class="status active">Active</span></td>
+                                <td><button
+                                        style="border: none; background: none; cursor: pointer; color: var(--text-muted);"><i
+                                            class="fa-solid fa-ellipsis-v"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex; gap: 0.75rem; align-items: center;">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50"
+                                        style="width: 32px; height: 32px; border-radius: 50%;">
+                                    <span style="font-weight: 500;">Emily Watson</span>
+                                </td>
+                                <td>emily@watsonlaw.com</td>
+                                <td>Client</td>
+                                <td><span class="status inactive">Inactive</span></td>
+                                <td><button
+                                        style="border: none; background: none; cursor: pointer; color: var(--text-muted);"><i
+                                            class="fa-solid fa-ellipsis-v"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex; gap: 0.75rem; align-items: center;">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50"
+                                        style="width: 32px; height: 32px; border-radius: 50%;">
+                                    <span style="font-weight: 500;">Robert Chen</span>
+                                </td>
+                                <td>robert@chentech.com</td>
+                                <td>Client</td>
+                                <td><span class="status active">Active</span></td>
+                                <td><button
+                                        style="border: none; background: none; cursor: pointer; color: var(--text-muted);"><i
+                                            class="fa-solid fa-ellipsis-v"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex; gap: 0.75rem; align-items: center;">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50"
+                                        style="width: 32px; height: 32px; border-radius: 50%;">
+                                    <span style="font-weight: 500;">Jessica Brown</span>
+                                </td>
+                                <td>jessica@brownagency.com</td>
+                                <td>Client</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td><button
+                                        style="border: none; background: none; cursor: pointer; color: var(--text-muted);"><i
+                                            class="fa-solid fa-ellipsis-v"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex; gap: 0.75rem; align-items: center;">
+                                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=50"
+                                        style="width: 32px; height: 32px; border-radius: 50%;">
+                                    <span style="font-weight: 500;">Thomas Anderson</span>
+                                </td>
+                                <td>thomas@andersoncorp.com</td>
+                                <td>Client</td>
+                                <td><span class="status active">Active</span></td>
+                                <td><button
+                                        style="border: none; background: none; cursor: pointer; color: var(--text-muted);"><i
+                                            class="fa-solid fa-ellipsis-v"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="vas" class="tab-content">
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>Virtual Assistants</h3>
+                        <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">+ Add
+                            VA</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="display: flex; gap: 0.75rem; align-items: center;">
+                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=50"
+                                        style="width: 32px; height: 32px; border-radius: 50%;">
+                                    <span style="font-weight: 500;">Michael Chen</span>
+                                </td>
+                                <td>michael@nexva.com</td>
+                                <td>VA</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td><button
+                                        style="border: none; background: none; cursor: pointer; color: var(--text-muted);"><i
+                                            class="fa-solid fa-ellipsis-v"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex; gap: 0.75rem; align-items: center;">
+                                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=50"
+                                        style="width: 32px; height: 32px; border-radius: 50%;">
+                                    <span style="font-weight: 500;">Anna Smith</span>
+                                </td>
+                                <td>anna@nexva.com</td>
+                                <td>VA</td>
+                                <td><span class="status active">Active</span></td>
+                                <td><button
+                                        style="border: none; background: none; cursor: pointer; color: var(--text-muted);"><i
+                                            class="fa-solid fa-ellipsis-v"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex; gap: 0.75rem; align-items: center;">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50"
+                                        style="width: 32px; height: 32px; border-radius: 50%;">
+                                    <span style="font-weight: 500;">James Wilson</span>
+                                </td>
+                                <td>james@nexva.com</td>
+                                <td>VA</td>
+                                <td><span class="status inprogress">In Progress</span></td>
+                                <td><button
+                                        style="border: none; background: none; cursor: pointer; color: var(--text-muted);"><i
+                                            class="fa-solid fa-ellipsis-v"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex; gap: 0.75rem; align-items: center;">
+                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=50"
+                                        style="width: 32px; height: 32px; border-radius: 50%;">
+                                    <span style="font-weight: 500;">Maria Garcia</span>
+                                </td>
+                                <td>maria@nexva.com</td>
+                                <td>VA</td>
+                                <td><span class="status active">Active</span></td>
+                                <td><button
+                                        style="border: none; background: none; cursor: pointer; color: var(--text-muted);"><i
+                                            class="fa-solid fa-ellipsis-v"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex; gap: 0.75rem; align-items: center;">
+                                    <img src="https://images.unsplash.com/photo-1504257406239-8b51f5634710?w=50"
+                                        style="width: 32px; height: 32px; border-radius: 50%;">
+                                    <span style="font-weight: 500;">Kevin Lee</span>
+                                </td>
+                                <td>kevin@nexva.com</td>
+                                <td>VA</td>
+                                <td><span class="status inactive">Inactive</span></td>
+                                <td><button
+                                        style="border: none; background: none; cursor: pointer; color: var(--text-muted);"><i
+                                            class="fa-solid fa-ellipsis-v"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex; gap: 0.75rem; align-items: center;">
+                                    <img src="https://images.unsplash.com/photo-1548142813-c348350df52b?w=50"
+                                        style="width: 32px; height: 32px; border-radius: 50%;">
+                                    <span style="font-weight: 500;">Laura Davis</span>
+                                </td>
+                                <td>laura@nexva.com</td>
+                                <td>VA</td>
+                                <td><span class="status active">Active</span></td>
+                                <td><button
+                                        style="border: none; background: none; cursor: pointer; color: var(--text-muted);"><i
+                                            class="fa-solid fa-ellipsis-v"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <script src="../js/dashboard.js"></script>
+</body>
+
+</html>

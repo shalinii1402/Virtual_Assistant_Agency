@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - NexVA Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .settings-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .settings-section {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .settings-section h3 {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .settings-section h3 i {
+            color: var(--primary);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .form-control {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: var(--white);
+            color: var(--text-main);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .notification-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .notification-item:last-child {
+            border-bottom: none;
+        }
+
+        .notification-info h4 {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .notification-info p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--border);
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: var(--primary);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        .logout-fixed {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            z-index: 101;
+        }
+
+        .btn-logout-fixed {
+            background: #EF4444;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .btn-logout-fixed:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: #DC2626;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logout-fixed {
+                bottom: 1rem;
+                left: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar" id="sidebar">
+            <a href="../index.html" class="sidebar-brand"><i class="fa-solid fa-layer-group"></i> Nex<span>VA</span></a>
+            <ul class="sidebar-menu">
+                <li class="menu-item"><a href="dashboard.html" class="menu-link"><span>Analytics</span> <i
+                            class="fa-solid fa-chart-pie"></i></a></li>
+                <li class="menu-item"><a href="users.html" class="menu-link"><span>Users</span> <i
+                            class="fa-solid fa-users"></i></a></li>
+                <li class="menu-item"><a href="tasks.html" class="menu-link"><span>Tasks</span> <i
+                            class="fa-solid fa-list-check"></i></a></li>
+                <li class="menu-item"><a href="messages.html" class="menu-link"><span>Messages</span> <i
+                            class="fa-solid fa-envelope"></i></a></li>
+                <li class="menu-item"><a href="settings.html" class="menu-link active"><span>Settings</span> <i
+                            class="fa-solid fa-gear"></i></a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <button id="sidebarToggle"
+                        style="background: none; border: none; font-size: 1.25rem; cursor: pointer; color: var(--text-muted);"><i
+                            class="fa-solid fa-bars"></i></button>
+                    <h2 style="margin: 0;">Account Settings</h2>
+                </div>
+                <div class="user-profile">
+                    <button id="themeToggle" style="border:none; background:none; cursor:pointer;"><i
+                            class="fa-solid fa-moon"></i></button>
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" class="user-avatar">
+                </div>
+            </header>
+
+            <div class="settings-container">
+                <!-- Profile Settings -->
+                <section class="settings-section">
+                    <h3><i class="fa-solid fa-user-circle"></i> Profile Settings</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" value="Admin User">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" value="admin@nexva.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" class="form-control" value="+1 (555) 000-1234">
+                        </div>
+                        <div class="form-group">
+                            <label>Job Title</label>
+                            <input type="text" class="form-control" value="Super Admin">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 1.5rem; padding: 0.6rem 1.25rem;">Save
+                        Changes</button>
+                </section>
+
+                <!-- Notifications -->
+                <section class="settings-section">
+                    <h3><i class="fa-solid fa-bell"></i> Notifications</h3>
+                    <div class="notification-item">
+                        <div class="notification-info">
+                            <h4>Email Notifications</h4>
+                            <p>Receive daily task summaries and system alerts.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-info">
+                            <h4>Desktop Alerts</h4>
+                            <p>Show push notifications for new messages.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-info">
+                            <h4>Marketing Updates</h4>
+                            <p>Be the first to know about new features.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Privacy & Security -->
+                <section class="settings-section">
+                    <h3><i class="fa-solid fa-shield-halved"></i> Privacy & Security</h3>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label>Current Password</label>
+                        <input type="password" class="form-control" placeholder="••••••••">
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input type="password" class="form-control" placeholder="••••••••">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm New Password</label>
+                            <input type="password" class="form-control" placeholder="••••••••">
+                        </div>
+                    </div>
+                    <div class="notification-item" style="margin-top: 1.5rem; border-bottom: none;">
+                        <div class="notification-info">
+                            <h4>Two-Factor Authentication</h4>
+                            <p>Add an extra layer of security to your account.</p>
+                        </div>
+                        <button class="btn btn-secondary" style="font-size: 0.875rem;">Enable 2FA</button>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 1.5rem; padding: 0.6rem 1.25rem;">Update
+                        Password</button>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Fixed Logout Button -->
+    <div class="logout-fixed">
+        <button class="btn-logout-fixed">Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+
+</html>

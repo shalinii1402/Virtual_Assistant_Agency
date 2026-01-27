@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details - NexVA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-hero {
+            position: relative;
+            padding: 10rem 0 6rem;
+            text-align: center;
+            background: var(--light);
+        }
+
+        .service-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .service-content {
+            max-width: 800px;
+            margin: 4rem auto;
+            line-height: 1.8;
+            font-size: 1.125rem;
+        }
+
+        .service-content img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            margin: 2rem 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .service-content h2 {
+            margin: 2.5rem 0 1rem;
+        }
+
+        .close-service {
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            background: var(--white);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .close-service:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: rotate(90deg);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-list i {
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .close-service {
+                top: 1.5rem;
+                right: 1.5rem;
+                width: 2.5rem;
+                height: 2.5rem;
+                font-size: 1.25rem;
+            }
+
+            .service-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-layer-group"></i> Nex<span>VA</span>
+            </a>
+
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="dashboard/dashboard.html" class="btn btn-secondary"
+                        style="border-color: var(--primary); color: var(--primary);"><i
+                            class="fa-solid fa-chart-line"></i> Dashboard</a>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="register.html" class="btn btn-primary">Get Started</a>
+                </div>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="service-hero">
+            <a href="services.html" class="close-service" title="Back to Services"><i class="fa-solid fa-xmark"></i></a>
+            <div class="container">
+                <h1 id="serviceTitle">Service Details</h1>
+                <p id="serviceTagline"
+                    style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                    Solutions for you</p>
+            </div>
+        </div>
+
+        <div class="container service-content">
+            <img id="serviceImage"
+                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                alt="Service Detail">
+
+            <div id="serviceBody">
+                <p>Loading detail content...</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <h2 style="margin-bottom: 2rem;">Ready to get started?</h2>
+                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                    <a href="register.html" class="btn btn-primary">Sign Up Now</a>
+                    <a href="contact.html" class="btn btn-secondary">Request a Custom Quote</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container" style="text-align: center; color: var(--text-muted); padding: 4rem 0;">&copy; 2026 NexVA
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const serviceId = params.get('id');
+
+        const services = {
+            '1': {
+                title: 'Admin & Data Entry',
+                tagline: 'Efficiency in Every Detail',
+                image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+                body: `
+                    <p>Our Administrative & Data Entry services are designed to take the weight of repetitive tasks off your shoulders. We focus on accuracy, speed, and reliability so you can focus on making high-impact decisions.</p>
+                    <h2>What we handle:</h2>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Email Management and Inbox Zero strategies</li>
+                        <li><i class="fa-solid fa-check"></i> Complex Calendar Coordination and Scheduling</li>
+                        <li><i class="fa-solid fa-check"></i> CRM Updates and Lead Management</li>
+                        <li><i class="fa-solid fa-check"></i> Data Cleaning and Research Projects</li>
+                        <li><i class="fa-solid fa-check"></i> Document Preparation and Transcription</li>
+                    </ul>
+                    <p>By delegating these essential but time-consuming tasks to our professionals, our clients report saving an average of 15 hours per week. That's time you can reinvest into innovation, sales, or personal growth.</p>
+                `
+            },
+            '2': {
+                title: 'Social Media Management',
+                tagline: 'Build Your Digital Authority',
+                image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+                body: `
+                    <p>In today's digital landscape, your social presence is your first impression. We help you stay consistent, relevant, and engaging without having to spend hours on every platform yourself.</p>
+                    <h2>Our Strategy Includes:</h2>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Content Planning and Visual Design</li>
+                        <li><i class="fa-solid fa-check"></i> Community Engagement and Comment Moderation</li>
+                        <li><i class="fa-solid fa-check"></i> Hashtag Strategy and Trend Optimization</li>
+                        <li><i class="fa-solid fa-check"></i> Detailed Performance Analytics and Reporting</li>
+                        <li><i class="fa-solid fa-check"></i> Multi-platform Synchronization</li>
+                    </ul>
+                    <p>We don't just post content; we build communities. Whether it's Instagram, LinkedIn, or TikTok, we ensure your brand voice is heard loud and clear.</p>
+                `
+            },
+            '3': {
+                title: 'Customer Support',
+                tagline: 'Exceptional Service, 24/7',
+                image: 'https://images.unsplash.com/photo-1549923746-c502d488b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+                body: `
+                    <p>Customer happiness is the heartbeat of any successful business. Our support specialists represent your brand with professionalism, empathy, and technical proficiency.</p>
+                    <h2>Support Capabilities:</h2>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Real-time Live Chat Support</li>
+                        <li><i class="fa-solid fa-check"></i> Helpdesk Management (Zendesk, Intercom, etc.)</li>
+                        <li><i class="fa-solid fa-check"></i> Email Support and Ticketing</li>
+                        <li><i class="fa-solid fa-check"></i> Customer Feedback and NPS Tracking</li>
+                        <li><i class="fa-solid fa-check"></i> Refund and Conflict Resolution</li>
+                    </ul>
+                    <p>We integrate seamlessly into your existing workflows, ensuring that every customer interaction strengthens their loyalty to your brand.</p>
+                `
+            },
+            '4': {
+                title: 'Content Writing',
+                tagline: 'Words That Convert',
+                image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+                body: `
+                    <p>High-quality content is the engine of modern marketing. Our writers blend creativity with SEO best practices to deliver copy that ranks well and resonates with your audience.</p>
+                    <h2>Writing Services:</h2>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> SEO-optimized Blog Posts</li>
+                        <li><i class="fa-solid fa-check"></i> High-converting Landing Page Copy</li>
+                        <li><i class="fa-solid fa-check"></i> Engaging Newsletters and Email Campaigns</li>
+                        <li><i class="fa-solid fa-check"></i> Whitepapers and E-books</li>
+                        <li><i class="fa-solid fa-check"></i> Product Descriptions for E-commerce</li>
+                    </ul>
+                `
+            },
+            '5': {
+                title: 'Bookkeeping',
+                tagline: 'Financial Clarity & Compliance',
+                image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+                body: `
+                    <p>Stay on top of your finances without the stress. Our bookkeeping specialists ensure your records are pristine, compliant, and ready for tax season.</p>
+                    <h2>Financial Services:</h2>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Accounts Payable & Receivable</li>
+                        <li><i class="fa-solid fa-check"></i> Monthly Bank Reconciliations</li>
+                        <li><i class="fa-solid fa-check"></i> Financial Statement Preparation</li>
+                        <li><i class="fa-solid fa-check"></i> Expense Tracking and Categorization</li>
+                        <li><i class="fa-solid fa-check"></i> Payroll Processing Support</li>
+                    </ul>
+                `
+            },
+            '6': {
+                title: 'Project Management',
+                tagline: 'Execution at Scale',
+                image: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+                body: `
+                    <p>Bring structure to your chaos. Our project managers ensure that deadlines are met, resources are optimized, and your team stays focused on the finish line.</p>
+                    <h2>Management Expertise:</h2>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Workflow Design and Optimization</li>
+                        <li><i class="fa-solid fa-check"></i> Task Delegation and Tracking</li>
+                        <li><i class="fa-solid fa-check"></i> Tool Implementation (Asana, Monday, ClickUp)</li>
+                        <li><i class="fa-solid fa-check"></i> Timeline and Milestone Management</li>
+                        <li><i class="fa-solid fa-check"></i> Risk Assessment and Mitigation</li>
+                    </ul>
+                `
+            }
+            // Additional services can be added here
+        };
+
+        if (serviceId && services[serviceId]) {
+            const s = services[serviceId];
+            document.getElementById('serviceTitle').innerText = s.title;
+            document.getElementById('serviceTagline').innerText = s.tagline;
+            document.getElementById('serviceImage').src = s.image;
+            document.getElementById('serviceBody').innerHTML = s.body;
+            document.title = `${s.title} - NexVA`;
+        } else if (serviceId) {
+            // Placeholder for other IDs if data isn't fully entered yet
+            document.getElementById('serviceTitle').innerText = 'Specialized Support';
+            document.getElementById('serviceTagline').innerText = 'Elevating your business standards';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - NexVA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .services-hero {
+            position: relative;
+            padding: 10rem 0 6rem;
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.7);
+            z-index: 1;
+        }
+
+        .services-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-hero h1 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .services-hero p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .service-card .card-icon {
+            width: 4.5rem;
+            height: 4.5rem;
+            background: var(--light);
+            color: var(--primary);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .card-icon {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .content-text-centered {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-text-centered h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .content-text-centered p {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-layer-group"></i> Nex<span>VA</span>
+            </a>
+
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="dashboard/dashboard.html" class="btn btn-secondary"
+                        style="border-color: var(--primary); color: var(--primary);"><i
+                            class="fa-solid fa-chart-line"></i> Dashboard</a>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="register.html" class="btn btn-primary">Get Started</a>
+                </div>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="services-hero reveal reveal-up">
+        <div class="container">
+            <h1>Our Expertise</h1>
+            <p>Comprehensive virtual assistance for every aspect of your business. We empower you to focus on growth
+                while we handle the execution.</p>
+        </div>
+    </div>
+
+    <section class="section container">
+        <div class="grid">
+            <div class="service-card reveal reveal-pop reveal-delay-1">
+                <div class="card-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                <h3>Admin & Data Entry</h3>
+                <p>Email management, scheduling appointment, data cleaning, and CRM updates.</p>
+                <a href="service-details.html?id=1" class="btn btn-secondary">Learn More</a>
+            </div>
+            <div class="service-card reveal reveal-pop reveal-delay-2">
+                <div class="card-icon"><i class="fa-brands fa-instagram"></i></div>
+                <h3>Social Media</h3>
+                <p>Content creation, community engagement, and analytics reporting for IG, LinkedIn, and more.</p>
+                <a href="service-details.html?id=2" class="btn btn-secondary">Learn More</a>
+            </div>
+            <div class="service-card reveal reveal-pop reveal-delay-3">
+                <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
+                <h3>Customer Support</h3>
+                <p>Live chat support, helpdesk ticket management, and phone handling.</p>
+                <a href="service-details.html?id=3" class="btn btn-secondary">Learn More</a>
+            </div>
+            <div class="service-card">
+                <div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                <h3>Content Writing</h3>
+                <p>SEO blog posts, newsletters, website copy, and ghostwriting.</p>
+                <a href="service-details.html?id=4" class="btn btn-secondary">Learn More</a>
+            </div>
+            <div class="service-card">
+                <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>Bookkeeping</h3>
+                <p>Invoicing, expense tracking, and monthly financial reporting.</p>
+                <a href="service-details.html?id=5" class="btn btn-secondary">Learn More</a>
+            </div>
+            <div class="service-card">
+                <div class="card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                <h3>Project Management</h3>
+                <p>Keeping your team on track with Asana, Trello, or ClickUp management.</p>
+                <a href="service-details.html?id=6" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section reveal reveal-left" style="background: var(--light);">
+        <div class="container content-grid">
+            <div class="content-text content-text-centered">
+                <h2>Elite Executive Assistance</h2>
+                <p>Free up your time for high-level strategy while our elite executive assistants handle the details.
+                    From complex calendar management and travel logistics to inbox zero strategies, we ensure your day
+                    runs like clockwork.</p>
+                <a href="register.html" class="btn btn-primary">Book an Executive Assistant</a>
+            </div>
+            <div class="content-image">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    alt="Executive Assistant">
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section reveal reveal-right">
+        <div class="container content-grid reverse">
+            <div class="content-text content-text-centered">
+                <h2>Digital Marketing & Growth</h2>
+                <p>Scale your online presence without the high agency fees. Our digital marketing virtual assistants
+                    specialize in social media management, SEO optimization, and email marketing automation.</p>
+                <a href="pricing.html" class="btn btn-secondary">View Growth Plans</a>
+            </div>
+            <div class="content-image">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    alt="Marketing Analytics">
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section reveal reveal-left" style="background: var(--light);">
+        <div class="container content-grid">
+            <div class="content-text content-text-centered">
+                <h2>Technical Support & Maintenance</h2>
+                <p>Don't let technical glitches slow you down. Our tech-savvy VAs can handle website maintenance, CRM
+                    setup, and basic troubleshooting across your entire software stack.</p>
+                <a href="contact.html" class="btn btn-primary">Hire Tech Support</a>
+            </div>
+            <div class="content-image">
+                <img src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    alt="Technical Support">
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section reveal reveal-right">
+        <div class="container content-grid reverse">
+            <div class="content-text content-text-centered">
+                <h2>Real Estate Specialized Support</h2>
+                <p>Designed specifically for busy realtors and property managers. Our real estate VAs handle lead
+                    generation, transaction coordination, and listing management.</p>
+                <a href="register.html" class="btn btn-secondary">Get Real Estate Help</a>
+            </div>
+            <div class="content-image">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    alt="Real Estate">
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section reveal reveal-left" style="background: var(--light);">
+        <div class="container content-grid">
+            <div class="content-text content-text-centered">
+                <h2>End-to-End E-commerce Management</h2>
+                <p>Manage your Shopify, Amazon, or Etsy store with ease. Our e-commerce specialists handle product
+                    listings, inventory tracking, and customer orders.</p>
+                <a href="pricing.html" class="btn btn-primary">Scale Your Store</a>
+            </div>
+            <div class="content-image">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    alt="E-commerce">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fa-solid fa-layer-group"></i> Nex<span>VA</span>
+                    </a>
+                    <p>Premium virtual assistant services for modern entrepreneurs. Scale faster with NexVA's elite
+                        global talent network.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav-group">
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul class="footer-links">
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-links">
+                            <li><a href="mailto:hello@nexva.com">hello@nexva.com</a></li>
+                            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                            <li>123 Innovation Dr.<br>Tech City, TC 90210</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NexVA. All rights reserved.</p>
+                <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

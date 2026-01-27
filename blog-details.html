@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - NexVA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .post-hero {
+            padding: 10rem 0 6rem;
+            background: var(--light);
+            text-align: center;
+        }
+
+        .post-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .post-meta {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .post-content {
+            max-width: 800px;
+            margin: 4rem auto;
+            line-height: 1.8;
+            font-size: 1.125rem;
+        }
+
+        .post-content img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            margin: 2rem 0;
+        }
+
+        .post-content h2 {
+            margin: 2.5rem 0 1rem;
+        }
+
+        .post-footer {
+            border-top: 1px solid var(--border);
+            padding-top: 4rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .close-post {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            background: var(--white);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .close-post:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: rotate(90deg);
+        }
+
+        @media (max-width: 768px) {
+            .close-post {
+                top: 1rem;
+                right: 1rem;
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-layer-group"></i> Nex<span>VA</span>
+            </a>
+
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="dashboard/dashboard.html" class="btn btn-secondary"
+                        style="border-color: var(--primary); color: var(--primary);"><i
+                            class="fa-solid fa-chart-line"></i> Dashboard</a>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="register.html" class="btn btn-primary">Get Started</a>
+                </div>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <article>
+        <div class="post-hero" style="position: relative;">
+            <a href="blog.html" class="close-post" title="Back to Blog"><i class="fa-solid fa-xmark"></i></a>
+            <div class="container">
+                <div class="post-meta" id="postMeta">Oct 24, 2025 • Productivity</div>
+                <h1 id="postTitle">5 Ways to Delegate Effectively</h1>
+            </div>
+        </div>
+
+        <div class="container post-content">
+            <img id="postImage" src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1200"
+                alt="Post Header">
+
+            <div id="postBody">
+                <p>Delegation is one of the most important skills any entrepreneur can master. It's not just about
+                    offloading tasks you don't like; it's about empowering your team and focusing your energy on
+                    high-value activities that grow your business.</p>
+
+                <h2>1. Identify Tasks to Delegate</h2>
+                <p>Start by auditing your weekly schedule. Any task that is repetitive, time-consuming, or falls outside
+                    your core genius is a prime candidate for delegation. This includes data entry, scheduling, email
+                    management, and technical troubleshooting.</p>
+
+                <h2>2. Choose the Right Person</h2>
+                <p>At NexVA, we match you with virtual assistants based on their specific skill sets. Ensure you're
+                    handing off tasks to someone who has the technical ability and cultural fit to succeed.</p>
+
+                <h2>3. Be Crystal Clear with Instructions</h2>
+                <p>Vague instructions lead to vague results. Use the NexVA dashboard to share clear project scopes,
+                    deadlines, and expected outcomes. Looms and screen recordings are Excellent tools for training.</p>
+
+                <p>Ready to reclaim your time? Check out our pricing plans and find your match today.</p>
+            </div>
+
+            <div class="post-footer">
+                <h3>Share this article</h3>
+                <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+                    <a href="#" class="btn btn-secondary"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="btn btn-secondary"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fa-solid fa-layer-group"></i> Nex<span>VA</span>
+                    </a>
+                    <p>Premium virtual assistant services for modern entrepreneurs. Scale faster with NexVA's elite
+                        global talent network.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav-group">
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul class="footer-links">
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-links">
+                            <li><a href="mailto:hello@nexva.com">hello@nexva.com</a></li>
+                            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                            <li>123 Innovation Dr.<br>Tech City, TC 90210</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NexVA. All rights reserved.</p>
+                <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple dynamic content based on URL parameter
+        const params = new URLSearchParams(window.location.search);
+        const postId = params.get('id');
+
+        const posts = {
+            '1': {
+                title: '5 Ways to Delegate Effectively',
+                meta: 'Oct 24, 2025 • Productivity',
+                image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1200'
+            },
+            '2': {
+                title: 'Top Tools for Virtual Teams',
+                meta: 'Oct 20, 2025 • Remote Work',
+                image: 'https://images.unsplash.com/photo-1593642532400-2682810df593?w=1200'
+            },
+            '3': {
+                title: 'How Client X Scaled by 300%',
+                meta: 'Oct 15, 2025 • Case Studies',
+                image: 'https://images.unsplash.com/photo-1552581234-26160f608093?w=1200'
+            },
+            '4': {
+                title: 'Morning Routines of CEOs',
+                meta: 'Oct 12, 2025 • Productivity',
+                image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200'
+            },
+            '5': {
+                title: 'Building Trust in Remote Teams',
+                meta: 'Oct 08, 2025 • Remote Work',
+                image: 'https://images.pexels.com/photos/7989235/pexels-photo-7989235.jpeg'
+            },
+            '6': {
+                title: 'E-commerce Expansion Strategy',
+                meta: 'Oct 05, 2025 • Case Studies',
+                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200'
+            }
+        };
+
+        if (postId && posts[postId]) {
+            const post = posts[postId];
+            document.getElementById('postTitle').innerText = post.title;
+            document.getElementById('postMeta').innerText = post.meta;
+            document.getElementById('postImage').src = post.image;
+            document.title = `${post.title} - NexVA`;
+        }
+    </script>
+</body>
+
+</html>

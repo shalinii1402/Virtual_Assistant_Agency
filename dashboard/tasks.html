@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks - NexVA Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar" id="sidebar">
+            <a href="../index.html" class="sidebar-brand"><i class="fa-solid fa-layer-group"></i> Nex<span>VA</span></a>
+            <ul class="sidebar-menu">
+                <li class="menu-item"><a href="dashboard.html" class="menu-link"><span>Analytics</span> <i
+                            class="fa-solid fa-chart-pie"></i></a></li>
+                <li class="menu-item"><a href="users.html" class="menu-link"><span>Users</span> <i
+                            class="fa-solid fa-users"></i></a></li>
+                <li class="menu-item"><a href="tasks.html" class="menu-link active"><span>Tasks</span> <i
+                            class="fa-solid fa-list-check"></i></a></li>
+                <li class="menu-item"><a href="messages.html" class="menu-link"><span>Messages</span> <i
+                            class="fa-solid fa-envelope"></i></a></li>
+                <li class="menu-item"><a href="settings.html" class="menu-link"><span>Settings</span> <i
+                            class="fa-solid fa-gear"></i></a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <button id="sidebarToggle"
+                        style="background: none; border: none; font-size: 1.25rem; cursor: pointer; color: var(--text-muted);"><i
+                            class="fa-solid fa-bars"></i></button>
+                    <h2 style="margin: 0;">Task Management</h2>
+                </div>
+                <div class="user-profile">
+                    <button id="themeToggle" style="border:none; background:none; cursor:pointer;"><i
+                            class="fa-solid fa-moon"></i></button>
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" class="user-avatar">
+                </div>
+            </header>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <p>Total Tasks</p>
+                        <h3>124</h3>
+                    </div>
+                    <div class="stat-icon" style="background: rgba(79, 70, 229, 0.1); color: var(--primary);">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <p>Pending</p>
+                        <h3>12</h3>
+                    </div>
+                    <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: #F59E0B;">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <p>In Progress</p>
+                        <h3>45</h3>
+                    </div>
+                    <div class="stat-icon" style="background: rgba(14, 165, 233, 0.1); color: var(--secondary);">
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <p>Completed</p>
+                        <h3>67</h3>
+                    </div>
+                    <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: #10B981;">
+                        <i class="fa-solid fa-check-double"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <div class="table-header">
+                    <h3>Submissions & Tasks</h3>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">+ Create
+                            Task</button>
+                    </div>
+                </div>
+
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <label>Search</label>
+                        <input type="text" placeholder="Task name or ID..." class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <label>Status</label>
+                        <select class="filter-input">
+                            <option value="">All Statuses</option>
+                            <option value="pending">Pending</option>
+                            <option value="inprogress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Priority</label>
+                        <select class="filter-input">
+                            <option value="">All Priorities</option>
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>VA/Client</label>
+                        <select class="filter-input">
+                            <option value="">All Assignees</option>
+                            <option value="va">My VAs</option>
+                            <option value="clients">My Clients</option>
+                        </select>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task ID</th>
+                            <th>Description</th>
+                            <th>Client</th>
+                            <th>VA</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                            <th>Deadline</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="clickable-row">
+                            <td style="font-family: monospace; color: var(--text-muted);">#TK-1024</td>
+                            <td style="font-weight: 500;">Q1 Marketing Report</td>
+                            <td>Sarah J.</td>
+                            <td>Michael C.</td>
+                            <td><span style="color: #EF4444; font-weight: 600; font-size: 0.75rem;">HIGH</span></td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>Jan 30, 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="action-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="action-btn delete" title="Delete"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="clickable-row">
+                            <td style="font-family: monospace; color: var(--text-muted);">#TK-1025</td>
+                            <td style="font-weight: 500;">Email Campaign</td>
+                            <td>TechStart</td>
+                            <td>Lisa R.</td>
+                            <td><span style="color: #F59E0B; font-weight: 600; font-size: 0.75rem;">MEDIUM</span></td>
+                            <td><span class="status inprogress">In Progress</span></td>
+                            <td>Feb 05, 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="action-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="action-btn delete" title="Delete"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="clickable-row">
+                            <td style="font-family: monospace; color: var(--text-muted);">#TK-1026</td>
+                            <td style="font-weight: 500;">Travel Booking</td>
+                            <td>John D.</td>
+                            <td>Mark S.</td>
+                            <td><span style="color: #10B981; font-weight: 600; font-size: 0.75rem;">LOW</span></td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>Jan 28, 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="action-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="action-btn delete" title="Delete"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="clickable-row">
+                            <td style="font-family: monospace; color: var(--text-muted);">#TK-1027</td>
+                            <td style="font-weight: 500;">Content Calendar</td>
+                            <td>Creative Studio</td>
+                            <td>Jane D.</td>
+                            <td><span style="color: #F59E0B; font-weight: 600; font-size: 0.75rem;">MEDIUM</span></td>
+                            <td><span class="status inprogress">In Progress</span></td>
+                            <td>Feb 12, 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="action-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="action-btn delete" title="Delete"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Task Detail Modal -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Task Details - #TK-1024</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="task-detail-grid">
+                <div class="detail-item">
+                    <label>Description</label>
+                    <p>Q1 Marketing Report Presentation</p>
+                </div>
+                <div class="detail-item">
+                    <label>Status</label>
+                    <span class="status pending">Pending</span>
+                </div>
+                <div class="detail-item">
+                    <label>Client</label>
+                    <p>Sarah Jenkins</p>
+                </div>
+                <div class="detail-item">
+                    <label>Assigned VA</label>
+                    <p>Michael Cohen</p>
+                </div>
+                <div class="detail-item">
+                    <label>Priority</label>
+                    <p style="color: #EF4444; font-weight: 600;">High</p>
+                </div>
+                <div class="detail-item">
+                    <label>Deadline</label>
+                    <p>January 30, 2026</p>
+                </div>
+                <div class="detail-item" style="grid-column: span 2;">
+                    <label>Additional Notes</label>
+                    <p>Please include the social media engagement metrics from December and compare them with the
+                        projected goals for Q1.</p>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: flex-end;">
+                <button class="btn btn-secondary close-modal-btn" style="padding: 0.5rem 1rem;">Close</button>
+                <button class="btn btn-primary" style="padding: 0.5rem 1rem;">Edit Task</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+
+</html>

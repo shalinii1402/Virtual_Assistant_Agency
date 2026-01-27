@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - NexVA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-hero {
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('https://images.pexels.com/photos/8867431/pexels-photo-8867431.jpeg') no-repeat center center;
+            background-size: cover;
+            color: var(--white);
+            margin-bottom: 4rem;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6));
+            z-index: 1;
+        }
+
+        .contact-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-hero h1 {
+            color: var(--white);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .contact-hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero {
+                min-height: 400px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            background: var(--white);
+            color: var(--text-main);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-layer-group"></i> Nex<span>VA</span>
+            </a>
+
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="dashboard/dashboard.html" class="btn btn-secondary"
+                        style="border-color: var(--primary); color: var(--primary);"><i
+                            class="fa-solid fa-chart-line"></i> Dashboard</a>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="register.html" class="btn btn-primary">Get Started</a>
+                </div>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="contact-hero reveal reveal-up">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p>Ready to scale? Let's talk about your needs and find your perfect VA match.</p>
+        </div>
+    </div>
+
+    <!-- Content Section 1: Schedule a Demo -->
+    <section id="demo" class="content-section reveal reveal-left" style="background: var(--light);">
+        <div class="container content-grid">
+            <div class="content-text">
+                <h2>Schedule a Live Demo</h2>
+                <p>Not sure where to start? Book a 15-minute discovery call with one of our scaling experts. We'll walk
+                    you through our platform, show you how we vet our talent, and help you identify the tasks you should
+                    delegate first.</p>
+                <p>Get a personalized roadmap for your business growth in just minutes.</p>
+                <a href="#" class="btn btn-primary">Book Your Demo</a>
+            </div>
+            <div class="content-image">
+                <img src="https://images.pexels.com/photos/6953560/pexels-photo-6953560.jpeg"
+                    alt="Video conference call and demo">
+            </div>
+        </div>
+    </section>
+
+    <section class="container contact-grid reveal reveal-up" style="margin: 4rem auto;">
+        <div>
+            <form>
+                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-input" placeholder="John">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-input" placeholder="Doe">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-textarea" rows="5" placeholder="Tell us about your needs..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+        <div>
+            <div class="card"
+                style="height: 100%; min-height: 400px; padding: 0; overflow: hidden; position: relative;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153167!3d-37.81732767975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d6a32f7f1f81!2sFederation%20Square!5e0!3m2!1sen!2sus!4v1614134444026!5m2!1sen!2sus"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div
+                    style="position: absolute; bottom: 20px; left: 20px; background: var(--white); padding: 1rem; border-radius: var(--radius-sm); box-shadow: var(--shadow-md); max-width: 250px;">
+                    <strong>NexVA HQ</strong><br>
+                    123 Innovation Dr.<br>
+                    Tech City, TC 90210
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section 4: Partnerships (Reverse) -->
+    <section class="content-section reveal reveal-right" style="background: var(--light);">
+        <div class="container content-grid reverse">
+            <div class="content-text">
+                <h2>Partner With NexVA</h2>
+                <p>Are you an agency owner or a business consultant? Our partnership program offers exclusive benefits,
+                    revenue sharing, and co-marketing opportunities. Join our network of industry leaders who are
+                    shaping the future of work.</p>
+                <p>Let's grow together and bring elite virtual assistance to more businesses worldwide.</p>
+                <a href="#" class="btn btn-secondary">Become a Partner</a>
+            </div>
+            <div class="content-image">
+                <img src="https://images.pexels.com/photos/8441810/pexels-photo-8441810.jpeg"
+                    alt="Handshake and partnership collaboration">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fa-solid fa-layer-group"></i> Nex<span>VA</span>
+                    </a>
+                    <p>Premium virtual assistant services for modern entrepreneurs. Scale faster with NexVA's elite
+                        global talent network.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav-group">
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul class="footer-links">
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-links">
+                            <li><a href="mailto:hello@nexva.com">hello@nexva.com</a></li>
+                            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                            <li>123 Innovation Dr.<br>Tech City, TC 90210</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NexVA. All rights reserved.</p>
+                <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

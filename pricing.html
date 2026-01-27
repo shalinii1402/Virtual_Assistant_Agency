@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - NexVA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .pricing-hero {
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('https://images.pexels.com/photos/5900222/pexels-photo-5900222.jpeg') no-repeat center center;
+            background-size: cover;
+            color: var(--white);
+            margin-bottom: 4rem;
+        }
+
+        .pricing-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6));
+            z-index: 1;
+        }
+
+        .pricing-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .pricing-hero h1 {
+            color: var(--white);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .pricing-hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .pricing-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--border);
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: var(--primary);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        .pricing-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 3rem 2rem;
+            background: var(--white);
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-card.popular {
+            border: 2px solid var(--primary);
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .badge-popular {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            color: var(--dark);
+        }
+
+        .pricing-card .price span {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-left: 0.25rem;
+        }
+
+        .pricing-card p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            text-align: left;
+            margin: 0 0 2.5rem;
+            list-style: none;
+            padding: 0;
+            flex-grow: 1;
+        }
+
+        .features li {
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .features i {
+            color: #10B981;
+            font-size: 1.1rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: stretch;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-card.popular {
+                transform: none;
+            }
+
+            .pricing-card.popular:hover {
+                transform: translateY(-10px);
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 3.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-layer-group"></i> Nex<span>VA</span>
+            </a>
+
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="dashboard/dashboard.html" class="btn btn-secondary"
+                        style="border-color: var(--primary); color: var(--primary);"><i
+                            class="fa-solid fa-chart-line"></i> Dashboard</a>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="register.html" class="btn btn-primary">Get Started</a>
+                </div>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="pricing-hero reveal reveal-up">
+        <div class="container">
+            <h1>Simple, Transparent Pricing</h1>
+            <p>Choose the perfect plan for your business growth. No hidden fees, no long-term contracts.</p>
+        </div>
+    </div>
+
+    <!-- Content Section 1: ROI Calculation -->
+    <section class="section container reveal reveal-left">
+        <div class="container content-grid">
+            <div class="content-text">
+                <h2 class="reveal reveal-right">Calculate Your ROI</h2>
+                <p>Investing in a virtual assistant isn't just an expense; it's a strategic move to reclaim your time.
+                    The average NexVA client saves over 20 hours a week, allowing them to focus on high-ticket revenue
+                    activities that far outweigh the cost of our services.</p>
+                <p>Imagine what you could achieve with an extra 80 hours a month. That's the NexVA advantage.</p>
+            </div>
+            <div class="content-image">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    alt="Financial calculation and ROI">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Content Section 3: Guarantee -->
+    <section class="section container reveal reveal-right">
+        <div class="container content-grid">
+            <div class="content-text">
+                <h2 class="reveal reveal-left">Risk-Free 14-Day Guarantee</h2>
+                <p>We are so confident in the quality of our talent that we offer a 14-day 100% money-back guarantee. If
+                    you're not completely satisfied with your matched VA within the first two weeks, we'll either find
+                    you a new match or refund your payment—no questions asked.</p>
+                <p>Your satisfaction is our top priority, and we're committed to ensuring you find the perfect partner.
+                </p>
+            </div>
+            <div class="content-image">
+                <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    alt="Handshake and trust guarantee">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Content Section 5: Referral Program -->
+    <section class="section content-section reveal reveal-up" style="background: var(--light); text-align: center;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="margin-bottom: 1.5rem;">The NexVA Referral Program</h2>
+                <p style="margin-bottom: 1rem;">Good things are meant to be shared. Refer a fellow business owner to
+                    NexVA, and you both get a $100
+                    credit toward your next month's service. There's no limit to how many people you can refer.</p>
+                <p style="margin-bottom: 2rem;">Help your network scale while you save on your own business growth.</p>
+                <a href="#" class="btn btn-primary" style="padding: 0.75rem 2.5rem;">Join Referral Program</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section container" style="margin-top: 4rem; text-align: center;">
+        <h2 class="reveal reveal-up" style="margin-bottom: 1rem;">Choose the Perfect Plan for Your Business</h2>
+        <p class="reveal reveal-up"
+            style="color: var(--text-muted); max-width: 700px; margin: 0 auto 3rem; line-height: 1.6;">
+            Unlock your team's potential with our flexible scaling options tailored for every stage of growth.<br>
+            Select a package that aligns with your specific goals and start delegating today.
+        </p>
+        <div class="pricing-toggle reveal reveal-up">
+            <span>Monthly</span>
+            <label class="switch">
+                <input type="checkbox" id="billingToggle">
+                <span class="slider"></span>
+            </label>
+            <span>Yearly <span style="font-size: 0.75rem; color: var(--primary); font-weight: 700;">(Save
+                    20%)</span></span>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card reveal reveal-pop reveal-delay-1">
+                <h3>Starter</h3>
+                <div class="price" id="starterPrice">$499<span>/mo</span></div>
+                <p>Perfect for solopreneurs</p>
+                <ul class="features">
+                    <li><i class="fa-solid fa-circle-check"></i> 10 Hours / Month</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 1 Dedicated VA</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Email Support</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Client Dashboard Access</li>
+                </ul>
+                <div style="text-align: center; margin-top: auto;">
+                    <a href="#" class="btn btn-secondary" style="width: 100%;">Get Started</a>
+                </div>
+            </div>
+            <div class="pricing-card popular reveal reveal-pop reveal-delay-2">
+                <div class="badge-popular">Most Popular</div>
+                <h3>Growth</h3>
+                <div class="price" id="growthPrice">$999<span>/mo</span></div>
+                <p>For growing agencies</p>
+                <ul class="features">
+                    <li><i class="fa-solid fa-circle-check"></i> 25 Hours / Month</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Dedicated VA + Backup</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Priority Email & Chat</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Project Management Tools</li>
+                </ul>
+                <div style="text-align: center; margin-top: auto;">
+                    <a href="#" class="btn btn-primary" style="width: 100%;">Get Started</a>
+                </div>
+            </div>
+            <div class="pricing-card reveal reveal-pop reveal-delay-3">
+                <h3>Enterprise</h3>
+                <div class="price" id="enterprisePrice">$1,999<span>/mo</span></div>
+                <p>For established businesses</p>
+                <ul class="features">
+                    <li><i class="fa-solid fa-circle-check"></i> 60 Hours / Month</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Team of Specialized VAs</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 24/7 Dedicated Manager</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Custom API Integrations</li>
+                </ul>
+                <div style="text-align: center; margin-top: auto;">
+                    <a href="#" class="btn btn-secondary" style="width: 100%;">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fa-solid fa-layer-group"></i> Nex<span>VA</span>
+                    </a>
+                    <p>Premium virtual assistant services for modern entrepreneurs. Scale faster with NexVA's elite
+                        global talent network.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav-group">
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul class="footer-links">
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-links">
+                            <li><a href="mailto:hello@nexva.com">hello@nexva.com</a></li>
+                            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                            <li>123 Innovation Dr.<br>Tech City, TC 90210</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NexVA. All rights reserved.</p>
+                <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+        const billingToggle = document.getElementById('billingToggle');
+        const prices = document.querySelectorAll('.price');
+        // Simple logic for demo
+        billingToggle.addEventListener('change', () => {
+            if (billingToggle.checked) {
+                prices[0].innerHTML = '$399<span>/mo</span>';
+                prices[1].innerHTML = '$799<span>/mo</span>';
+                prices[2].innerHTML = '$1599<span>/mo</span>';
+            } else {
+                prices[0].innerHTML = '$499<span>/mo</span>';
+                prices[1].innerHTML = '$999<span>/mo</span>';
+                prices[2].innerHTML = '$1999<span>/mo</span>';
+            }
+        });
+    </script>
+</body>
+
+</html>
