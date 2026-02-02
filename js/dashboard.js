@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Close when clicking outside on mobile
         document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 768 && sidebarToggle) {
                 if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target) && sidebar.classList.contains('active')) {
                     sidebar.classList.remove('active');
                 }

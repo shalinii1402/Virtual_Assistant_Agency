@@ -31,17 +31,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.querySelector('.nav-menu');
+    const body = document.body;
 
     hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         hamburger.classList.toggle('active');
+        body.classList.toggle('menu-open');
 
         // Animate hamburger spans
         const spans = hamburger.querySelectorAll('span');
         if (navMenu.classList.contains('active')) {
-            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
             spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+            spans[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
         } else {
             spans[0].style.transform = 'none';
             spans[1].style.opacity = '1';
@@ -53,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         if (!hamburger.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            body.classList.remove('menu-open');
             const spans = hamburger.querySelectorAll('span');
             spans[0].style.transform = 'none';
             spans[1].style.opacity = '1';

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users - NexVA Dashboard</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -30,14 +31,15 @@
         <main class="main-content">
             <header class="top-bar">
                 <div style="display: flex; gap: 1rem; align-items: center;">
-                    <button id="sidebarToggle"
-                        style="background: none; border: none; font-size: 1.25rem; cursor: pointer; color: var(--text-muted);"><i
-                            class="fa-solid fa-bars"></i></button>
                     <h2 style="margin: 0;">User Management</h2>
                 </div>
                 <div class="user-profile">
                     <button id="themeToggle" style="border:none; background:none; cursor:pointer;"><i
                             class="fa-solid fa-moon"></i></button>
+                    <a href="../index.html" class="logout-btn" title="Logout"
+                        style="color: var(--text-muted); font-size: 1.1rem; text-decoration: none; transition: var(--transition);">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </a>
                     <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" class="user-avatar">
                 </div>
             </header>

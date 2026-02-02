@@ -167,6 +167,11 @@
     object-fit: cover;
 }
 
+.logout-btn:hover {
+    color: var(--primary) !important;
+    transform: scale(1.1);
+}
+
 /* Dashboard Cards */
 .stats-grid {
     display: grid;

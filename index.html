@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NexVA - Premium Virtual Assistant Agency</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <meta name="description"
         content="Hire top-tier virtual assistants to scale your business. Manage tasks, track progress, and communicate seamlessly in one dashboard.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Home Page Specific Centering & Enhancements */
         .hero-section {
             position: relative;
             background: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
@@ -47,6 +47,7 @@
             max-width: 900px !important;
             margin: 0 auto;
             color: var(--white);
+            text-align: center;
         }
 
         .hero-content h1 {
@@ -58,10 +59,14 @@
             max-width: 650px;
             color: rgba(255, 255, 255, 0.9);
             font-size: 1.25rem;
+            margin: 0 auto 1.5rem;
         }
 
         .hero-btns {
             margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
         }
 
         .hero-btns .btn-secondary {
@@ -113,15 +118,15 @@
             gap: 4rem;
         }
 
-        /* Split Layout Overrides */
+        /* Split Layout Overrides - Now Centered */
         .split-layout .content-grid {
             grid-template-columns: 1fr 1fr;
-            text-align: left;
+            text-align: center;
         }
 
         .split-layout .content-text {
-            text-align: left;
-            margin: 0;
+            text-align: center;
+            margin: 0 auto;
             max-width: 100% !important;
         }
 
@@ -133,7 +138,7 @@
             direction: ltr;
         }
 
-        @media (max-width: 968px) {
+        @media (max-width: 1024px) {
             .split-layout .content-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -225,7 +230,8 @@
 
             <nav class="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="index.html" class="nav-link active">Home 1</a></li>
+                    <li><a href="home-niche.html" class="nav-link">Home 2</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
                     <li><a href="blog.html" class="nav-link">Blog</a></li>

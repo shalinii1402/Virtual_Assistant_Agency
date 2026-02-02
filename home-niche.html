@@ -4,9 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Estate VAs - NexVA</title>
+    <title>NexVA - Lead Generation Experts</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-image,
+        .content-image {
+            height: 500px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+
+            .hero-image,
+            .content-image,
+            .content-image img {
+                height: 300px !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +36,8 @@
 
             <nav class="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html" class="nav-link">Home 1</a></li>
+                    <li><a href="home-niche.html" class="nav-link active">Home 2</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
                     <li><a href="blog.html" class="nav-link">Blog</a></li>
@@ -42,7 +60,7 @@
         </div>
     </header>
 
-    <section class="hero container" style="align-items: flex-start;">
+    <section class="hero container reveal reveal-up">
         <div class="hero-content">
             <span style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">For
                 Real Estate Agents</span>
@@ -54,30 +72,30 @@
                 <a href="#" class="btn btn-secondary">View Profiles</a>
             </div>
         </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                alt="Real estate meeting" style="height: 100%; object-fit: cover;">
+        <div class="hero-image" style="border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+            <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Real Estate Team Collaboration" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
     </section>
 
     <section class="section" style="background: var(--light);">
-        <div class="container">
+        <div class="container reveal reveal-up">
             <div class="section-header">
                 <h2>Specialized Services</h2>
                 <p>Tailored specifically for the real estate industry.</p>
             </div>
             <div class="grid">
-                <div class="card">
+                <div class="card reveal reveal-pop reveal-delay-1">
                     <div class="card-icon"><i class="fa-solid fa-phone"></i></div>
                     <h3>ISA / Cold Calling</h3>
                     <p>Expert inside sales agents to nurture leads and set appointments.</p>
                 </div>
-                <div class="card">
+                <div class="card reveal reveal-pop reveal-delay-2">
                     <div class="card-icon"><i class="fa-solid fa-file-contract"></i></div>
                     <h3>Transaction Coordinator</h3>
                     <p>Manage paperwork, deadlines, and compliance from contract to close.</p>
                 </div>
-                <div class="card">
+                <div class="card reveal reveal-pop reveal-delay-3">
                     <div class="card-icon"><i class="fa-solid fa-hashtag"></i></div>
                     <h3>Social Media Mgmt</h3>
                     <p>Showcase new listings and engage with your community online.</p>
@@ -89,7 +107,7 @@
     </section>
 
     <!-- Content Section 1: Lead Generation -->
-    <section class="content-section">
+    <section class="content-section reveal reveal-left">
         <div class="container content-grid">
             <div class="content-text">
                 <h2>Mastering Your Lead Generation</h2>
@@ -99,15 +117,15 @@
                 <p>Scale your pipeline without increasing your workload. We turn cold leads into warm opportunities.</p>
                 <a href="#" class="btn btn-primary">Hire an ISA</a>
             </div>
-            <div class="content-image">
-                <img src="https://images.unsplash.com/photo-1556740734-7bb6a9089f28?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                    alt="Real estate lead generation and calling">
+            <div class="content-image" style="border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    alt="Real Estate Lead Generation" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
         </div>
     </section>
 
     <!-- Content Section 2: Transaction Coordination (Reverse) -->
-    <section class="content-section" style="background: var(--light);">
+    <section class="content-section reveal reveal-right" style="background: var(--light);">
         <div class="container content-grid reverse">
             <div class="content-text">
                 <h2>Seamless Transaction Coordination</h2>
@@ -125,14 +143,17 @@
     </section>
 
     <!-- Content Section 3: Listing Marketing -->
-    <section class="content-section">
+    <section class="content-section reveal reveal-left">
         <div class="container content-grid">
-            <div class="content-text">
+            <div class="content-text" style="text-align: center;">
                 <h2>High-Impact Listing Marketing</h2>
                 <p>Your listings deserve to stand out. Our marketing VAs create stunning brochures, manage MLS entries,
                     and run targeted social media campaigns for every new property. We ensure your brand looks premium
                     and your sellers feel well-represented.</p>
                 <p>Maximize exposure and minimize time-on-market with professional marketing support.</p>
+                <div style="display: flex; justify-content: center; margin-top: 2rem;">
+                    <a href="pricing.html" class="btn btn-primary">Find Your Niche Expert</a>
+                </div>
             </div>
             <div class="content-image">
                 <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
@@ -142,7 +163,7 @@
     </section>
 
     <!-- Content Section 4: Database Management (Reverse) -->
-    <section class="content-section" style="background: var(--light);">
+    <section class="content-section reveal reveal-right" style="background: var(--light);">
         <div class="container content-grid reverse">
             <div class="content-text">
                 <h2>CRM & Database Management</h2>
@@ -160,7 +181,7 @@
     </section>
 
     <!-- Content Section 5: Why Agencies Choose Us -->
-    <section class="content-section">
+    <section class="content-section reveal reveal-up">
         <div class="container content-grid">
             <div class="content-text">
                 <h2>Why Top Agencies Choose NexVA</h2>
