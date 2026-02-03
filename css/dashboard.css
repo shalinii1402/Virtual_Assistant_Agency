@@ -14,7 +14,7 @@
     border-right: 1px solid var(--border);
     position: fixed;
     height: 100vh;
-    overflow-y: auto;
+    overflow: hidden;
     left: 0;
     top: 0;
     padding: 2rem 1.5rem;
@@ -65,6 +65,16 @@
 .sidebar-menu {
     list-style: none;
     flex: 1;
+    overflow-y: auto;
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.sidebar-menu::-webkit-scrollbar {
+    display: none;
 }
 
 .menu-item {
@@ -420,7 +430,7 @@ td {
 
 .action-btn:hover {
     background: var(--primary);
-    color: var(--white);
+    color: #ffffff;
 }
 
 .action-btn.delete:hover {
@@ -596,7 +606,7 @@ tr.clickable-row:hover {
 
 .btn-logout:hover {
     background: #EF4444;
-    color: var(--white);
+    color: #ffffff;
     transform: translateX(3px);
 }
 
