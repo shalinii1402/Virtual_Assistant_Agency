@@ -76,15 +76,21 @@
 }
 
 [data-theme="dark"] .client-details h4 {
-    color: var(--white);
+    color: #ffffff;
 }
 
-[data-theme="dark"] .testimonials-section .section-header p,
-[data-theme="dark"] .testimonial-text,
+[data-theme="dark"] .testimonials-section .section-header p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="dark"] .testimonial-text {
+    color: #ffffff;
+}
+
 [data-theme="dark"] .client-details p {
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 [data-theme="dark"] .section-title {
-    color: var(--white);
+    color: #ffffff;
 }

@@ -452,7 +452,7 @@ footer {
 }
 
 [data-theme="dark"] footer .footer-links a:hover {
-    color: var(--white);
+    color: #ffffff;
 }
 
 .footer-grid {
@@ -489,7 +489,7 @@ footer {
 }
 
 [data-theme="dark"] .footer-col h4 {
-    color: var(--white);
+    color: #ffffff;
 }
 
 .footer-links li {
@@ -550,7 +550,7 @@ footer {
 
 .back-to-top:hover {
     background: var(--primary);
-    color: var(--white);
+    color: #ffffff;
     border-color: var(--primary);
     transform: translateY(-50%) scale(1.05);
 }
