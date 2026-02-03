@@ -425,10 +425,11 @@ header {
 
 /* Footer */
 /* Footer */
+/* Footer */
 footer {
     background: var(--white);
     color: var(--text-main);
-    padding: 3rem 0 0;
+    padding: 2rem 0 0;
     position: relative;
     margin-top: auto;
     border-top: 1px solid var(--border);
@@ -459,7 +460,7 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     gap: 4rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 .footer-brand {
@@ -507,7 +508,7 @@ footer {
 
 .footer-bottom {
     border-top: 1px solid var(--border);
-    padding: 2rem 0;
+    padding: 1rem 0;
     text-align: center;
     position: relative;
     /* For absolute positioning of back-to-top */
