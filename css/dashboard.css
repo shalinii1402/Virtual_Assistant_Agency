@@ -577,8 +577,8 @@ tr.clickable-row:hover {
 }
 
 .dropdown-item:hover {
-    background: var(--light);
-    color: var(--primary);
+    background: var(--primary);
+    color: var(--white-fixed);
 }
 
 .logout-container {

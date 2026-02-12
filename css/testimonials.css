@@ -67,30 +67,30 @@
 
 /* Dark Theme Overrides for Testimonials */
 [data-theme="dark"] .testimonials-section {
-    background: var(--dark-surface);
+    background: var(--light);
 }
 
 [data-theme="dark"] .testimonial-card {
-    background: var(--dark);
-    border-color: rgba(255, 255, 255, 0.1);
+    background: var(--white);
+    border-color: var(--border);
 }
 
 [data-theme="dark"] .client-details h4 {
-    color: #ffffff;
+    color: var(--text-main);
 }
 
 [data-theme="dark"] .testimonials-section .section-header p {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-muted);
 }
 
 [data-theme="dark"] .testimonial-text {
-    color: #ffffff;
+    color: var(--text-main);
 }
 
 [data-theme="dark"] .client-details p {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-muted);
 }
 
 [data-theme="dark"] .section-title {
-    color: #ffffff;
+    color: var(--text-main);
 }

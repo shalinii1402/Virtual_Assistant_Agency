@@ -37,22 +37,29 @@
 
     /* Transitions */
     --transition: all 0.3s ease;
+
+    /* Fixed Colors */
+    --white-fixed: #ffffff;
 }
 
 [data-theme="dark"] {
     --light: #020617;
-    --white: #0F172A;
-    --text-main: #FFFFFF;
-    /* Pure white for maximum contrast */
-    --text-muted: #E2E8F0;
-    /* Slate 200 - High visibility */
-    --border: #64748B;
-    /* Slate 500 - Clear boundary */
-    --primary: #6366F1;
-    /* Indigo 500 - Balanced for white text & dark bg */
-    --primary-hover: #818CF8;
-    /* Lighter on hover */
+    /* Deep Slate 950 */
+    --white: #0f172a;
+    /* Slate 900 - Card/Surface */
+    --text-main: #f8fafc;
+    /* Slate 50 - Near white */
+    --text-muted: #cbd5e1;
+    /* Slate 300 - Clearly visible */
+    --border: #334155;
+    /* Slate 700 - Visible but subtle */
+    --primary: #818cf8;
+    /* Indigo 400 - Lighter for dark mode */
+    --primary-hover: #a5b4fc;
+    /* Indigo 300 */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+    --dark: #f1f5f9;
+    /* Flip --dark to light in dark mode for contrast */
 }
 
 /* Global Form Elements for Contrast */
@@ -72,7 +79,7 @@ input:focus,
 textarea:focus,
 select:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.3);
 }
 
 ::placeholder {
@@ -201,10 +208,14 @@ p {
     color: var(--text-main);
 }
 
+[data-theme="dark"] .btn-secondary {
+    border-color: var(--text-muted);
+}
+
 .btn-secondary:hover {
     border-color: var(--primary);
     color: var(--primary);
-    background: rgba(79, 70, 229, 0.05);
+    background: rgba(129, 140, 248, 0.1);
 }
 
 /* Header */
@@ -712,7 +723,7 @@ footer {
     }
 
     [data-theme="dark"] .nav-menu {
-        background: var(--dark);
+        background: var(--white);
     }
 
     .nav-menu.active {
