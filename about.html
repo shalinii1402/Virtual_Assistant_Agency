@@ -85,6 +85,40 @@
             margin-top: 1rem;
             line-height: 1.5;
         }
+
+        /* Tablet Refinements */
+        @media (max-width: 1024px) {
+            .about-hero {
+                padding: 8rem 0 5rem;
+            }
+
+            .about-hero p {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: var(--spacing-lg) 0;
+            }
+
+            /* Center leader cards when they wrap */
+            .leader-grid {
+                display: flex !important;
+                flex-wrap: wrap;
+                justify-content: center;
+                grid-template-columns: none !important;
+            }
+
+            .leader-card {
+                flex: 0 1 320px;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 6rem 0 4rem;
+            }
+        }
     </style>
 </head>
 
@@ -129,12 +163,11 @@
         </div>
     </div>
 
-    <section class="section container reveal reveal-left">
-        <div class="grid"
-            style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; gap: 4rem;">
-            <div>
+    <section class="content-section reveal reveal-left">
+        <div class="container content-grid">
+            <div class="content-image">
                 <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                    alt="Meeting" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%;">
+                    alt="Meeting">
             </div>
             <div class="content-text">
                 <h2>Who We Are</h2>
@@ -142,14 +175,14 @@
                     not. We bridge the gap between world-class entrepreneurs and elite global talent.</p>
                 <p>We are not just a marketplace; we are a managed service partnership. We take care of vetting,
                     payroll, and compliance so you can focus on building your empire.</p>
-                <div class="grid" style="grid-template-columns: 1fr 1fr; margin-top: 2rem;">
+                <div class="grid" style="grid-template-columns: 1fr 1fr; margin-top: 2rem; gap: 1rem;">
                     <div>
-                        <h3 style="color: var(--primary); font-size: 2.5rem; margin: 0;">500+</h3>
-                        <p>Clients Served</p>
+                        <h3 style="color: var(--primary); font-size: 2.2rem; margin: 0;">500+</h3>
+                        <p style="margin-bottom: 0; font-size: 0.9rem;">Clients Served</p>
                     </div>
                     <div>
-                        <h3 style="color: var(--primary); font-size: 2.5rem; margin: 0;">1M+</h3>
-                        <p>Hours Saved</p>
+                        <h3 style="color: var(--primary); font-size: 2.2rem; margin: 0;">1M+</h3>
+                        <p style="margin-bottom: 0; font-size: 0.9rem;">Hours Saved</p>
                     </div>
                 </div>
             </div>
@@ -241,7 +274,8 @@
                 <h2>Our Leadership</h2>
                 <p class="section-subtitle">Meet the visionary team behind the NexVA global movement.</p>
             </div>
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <div class="grid leader-grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
                 <div class="leader-card reveal reveal-pop reveal-delay-1">
                     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400" alt="CEO"
                         class="leader-img">

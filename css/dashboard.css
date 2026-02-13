@@ -117,6 +117,8 @@
     margin-left: 280px;
     padding: 2.5rem;
     transition: var(--transition);
+    min-width: 0;
+    max-width: 100%;
 }
 
 .main-content.expanded {
@@ -353,6 +355,13 @@ td {
     grid-template-columns: 2fr 1fr;
     gap: 1.5rem;
     margin-bottom: 2rem;
+    width: 100%;
+}
+
+.card {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .sidebar-toggle-btn {
@@ -405,6 +414,10 @@ td {
     .top-bar {
         gap: 1rem;
     }
+
+    .top-bar h2 {
+        font-size: 1.75rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -416,8 +429,24 @@ td {
         padding-top: 0.5rem;
     }
 
+    .top-bar h2 {
+        font-size: 1.4rem;
+    }
+
+    .user-profile {
+        gap: 0.5rem;
+    }
+
     .user-profile div {
         display: none;
+    }
+
+    .card {
+        padding: 1.25rem;
+    }
+
+    .card h3 {
+        font-size: 1.25rem;
     }
 }
 
@@ -431,7 +460,19 @@ td {
     }
 
     .stat-info h3 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+    }
+
+    .stat-info p {
+        font-size: 0.75rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .card h3 {
+        font-size: 1.1rem;
     }
 }
 
