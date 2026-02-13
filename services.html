@@ -30,6 +30,13 @@
             z-index: 1;
         }
 
+
+        @media (min-width: 1025px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+
         .services-hero .container {
             position: relative;
             z-index: 2;
@@ -137,7 +144,7 @@
     </div>
 
     <section class="section container">
-        <div class="grid">
+        <div class="grid services-grid">
             <div class="service-card reveal reveal-pop reveal-delay-1">
                 <div class="card-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
                 <h3>Admin & Data Entry</h3>
@@ -146,8 +153,8 @@
             </div>
             <div class="service-card reveal reveal-pop reveal-delay-2">
                 <div class="card-icon"><i class="fa-brands fa-instagram"></i></div>
-                <h3>Social Media</h3>
-                <p>Content creation, community engagement, and analytics reporting for IG, LinkedIn, and more.</p>
+                <h3>Social Media Connect</h3>
+                <p>Content creation, community engagement, and analytics reporting for IG and more.</p>
                 <a href="service-details.html?id=2" class="btn btn-secondary">Learn More</a>
             </div>
             <div class="service-card reveal reveal-pop reveal-delay-3">
@@ -158,13 +165,13 @@
             </div>
             <div class="service-card">
                 <div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div>
-                <h3>Content Writing</h3>
+                <h3>Content Writing Solutions</h3>
                 <p>SEO blog posts, newsletters, website copy, and ghostwriting.</p>
                 <a href="service-details.html?id=4" class="btn btn-secondary">Learn More</a>
             </div>
             <div class="service-card">
                 <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
-                <h3>Bookkeeping</h3>
+                <h3>Book Keeping Services</h3>
                 <p>Invoicing, expense tracking, and monthly financial reporting.</p>
                 <a href="service-details.html?id=5" class="btn btn-secondary">Learn More</a>
             </div>
