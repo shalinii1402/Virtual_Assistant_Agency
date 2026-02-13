@@ -206,12 +206,23 @@
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
             max-width: 1200px;
             margin: 0 auto;
             align-items: stretch;
-            padding: 2rem 0;
+            padding: 2rem 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .pricing-card.popular {
+                transform: scale(1.02);
+            }
+
+            .pricing-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -226,6 +237,17 @@
             .pricing-grid {
                 grid-template-columns: 1fr;
                 gap: 3.5rem;
+                padding: 1rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pricing-card {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .pricing-grid {
+                gap: 2.5rem;
             }
         }
     </style>
